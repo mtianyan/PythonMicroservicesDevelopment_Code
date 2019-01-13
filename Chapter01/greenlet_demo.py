@@ -1,4 +1,5 @@
 from greenlet import greenlet
+# pip install greenlet
 
 def test1(x, y):
 	z = gr2.switch(x+y)
@@ -11,3 +12,8 @@ def test2(u):
 gr1 = greenlet(test1)
 gr2 = greenlet(test2)
 gr1.switch("hello", " world")
+
+"""
+hello world
+42
+"""

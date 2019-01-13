@@ -1,9 +1,10 @@
 import asyncio
-import aiopg
+import aiopg # pip install aiopg
 
 dsn = 'dbname=aiopg user=aiopg password=passwd host=127.0.0.1'
 
 async def go():
+	"""异步的PostgreSQL"""
 	pool = await aiopg.create_pool(dsn)
 	async with pool.acquire() as conn:
 		async with conn.cursor() as cur:

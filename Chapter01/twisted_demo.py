@@ -1,8 +1,10 @@
 import time
 from twisted.web import server, resource
 from twisted.internet import reactor, endpoints
+import json
 
 class Simple(resource.Resource):
+	"""使用twisted返回当前服务器时间"""
 	isLeaf = True
 	def render_GET(self, request):
 		request.responseHeaders.addRawHeader(b"content-type", b"application/json")
