@@ -8,7 +8,7 @@ class MyBugzilla:
 		self.session = requests.Session()
 		
 	def bug_link(self, bug):
-		return '%s/show_bug.cgi?id=%s' % (self.server, bug['id'])
+		return '%s/show_bug.cgi?id=%s' % (self.server, bug)
 		hello = self.app.get('/api')
 	
 	def get_new_bugs(self):

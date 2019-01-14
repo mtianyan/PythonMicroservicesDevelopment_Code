@@ -1,14 +1,23 @@
-import json
+"""
+
+This Molotov script has 2 scenario
+molotov 03_molotov.py -p 10 -w 200 -d 60 -qx
+"""
 from molotov import scenario
 
-@scenario(5)
-async def scenario_one(session):
-	res = await session.get('http://localhost:5000/api').json()
-	assert res['Hello'] == 'World!'
-	print(res)
 
-@scenario(30)
+_API = 'http://127.0.0.1:5000'
+
+
+@scenario(weight=40)
+async def scenario_one(session):
+    async with session.get(_API) as resp:
+        res = await resp.json()
+        assert res['result'] == 'OK'
+        assert resp.status == 200
+
+
+@scenario(weight=60)
 async def scenario_two(session):
-	somedata = json.dumps({'OK': 1})
-	res = await session.post('http://localhost:5000/api', data=somedata)
-	assert res.status_code == 200
+    async with session.get(_API) as resp:
+        assert resp.status == 200
