@@ -1,5 +1,6 @@
 from flask import Flask, jsonify 
- 
+
+"""使用flask开发微服务的基础"""
 app = Flask(__name__) 
  
 @app.route('/api') 

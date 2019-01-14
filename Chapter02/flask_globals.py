@@ -11,7 +11,19 @@ def authenticate():
 
 @app.route('/api')
 def my_microservice():
+	"""
+	在request上下文中存储数据
+	"""
 	return jsonify({'Hello': g.user})
 
 if __name__ == '__main__':
 	app.run()
+"""
+C:\Users\tiany\Desktop\PythonMicroservicesDevelopment_Code\Chapter02 (master -> origin)
+λ curl http://127.0.0.1:5000/api
+{"Hello":"Anonymous"}
+
+C:\Users\tiany\Desktop\PythonMicroservicesDevelopment_Code\Chapter02 (master -> origin)
+λ curl http://127.0.0.1:5000/api --user tarek:pass
+{"Hello":"tarek"}
+"""	

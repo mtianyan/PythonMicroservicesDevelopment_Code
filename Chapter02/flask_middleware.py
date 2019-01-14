@@ -13,6 +13,9 @@ class XFFMiddleware(object):
 		return self.app(environ, start_response)
 
 app = Flask(__name__)
+"""
+中间件，在请求来到视图处理函数之前，对于environ进行修改
+"""
 app.wsgi_app = XFFMiddleware(app.wsgi_app)
 
 @app.route('/api')
@@ -20,7 +23,7 @@ def my_microservice():
 	if "X-Forwarded-For" in request.headers:
 		ips = [ip.strip() for ip in
 			request.headers['X-Forwarded-For'].split(',')]
-		ip = ips[0]
+		ip = ips[1]
 	else:
 		ip = request.remote_addr
 
