@@ -4,6 +4,9 @@ import json
 from flask import Flask, jsonify, abort
 from werkzeug.exceptions import HTTPException
 
+"""
+Graypy 融入flask应用程序中
+"""
 app = Flask(__name__)
 
 def error_handling(error):

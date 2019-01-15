@@ -5,6 +5,9 @@ import graypy
 import logging
 import json
 
+"""
+psutil 系统性能指标
+"""
 loop = asyncio.get_event_loop()
 logger = logging.getLogger('sysmetrics')
 

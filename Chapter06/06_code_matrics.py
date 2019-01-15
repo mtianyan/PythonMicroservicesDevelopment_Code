@@ -63,6 +63,12 @@ def my_microservice():
 if __name__ == '__main__':
 	handler = graypy.GELFHandler('localhost', 12201)
 
+
+
+"""
+fast_stuff（） 和 some_slow_stuff（） 功能和消息将在与每个呼叫的持续时间的请求结束发送到Graylog
+"""
+
 app.logger.addHandler(handler)
 app.logger.setLevel(logging.INFO)
-set_app_metrics(
+set_app_metrics()

@@ -1,6 +1,9 @@
 import logging
 from logging.handlers import SMTPHandler
 
+"""
+集中化日志
+"""
 host = "smtp.free.fr", 25
 handler = SMTPHandler(mailhost=host, fromaddr="tarek@ziade.org", toaddrs=["tarek@ziade.org"], subject="Service Exception")
 
