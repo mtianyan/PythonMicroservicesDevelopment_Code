@@ -1,4 +1,8 @@
-import jwt
+import jwt # pip install pyjwt
+
+"""
+使用Pyjwt 产生token
+"""
 
 def create_token(alg='HS256', secret='secret', **data):
 	return jwt.encode(data, secret, algorithm=alg)

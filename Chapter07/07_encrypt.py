@@ -1,5 +1,8 @@
 import jwt
 
+"""
+使用JWT 和 X.509 certificate-based authentication
+"""
 with open('pubkey.pem') as f:
 	PUBKEY = f.read()
 
