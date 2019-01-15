@@ -40,4 +40,5 @@ if 	__name__ == '__main__':
 
 """
 http协议modified，缓存请求数据。
+curl -H "Content-Type: application/json" -X POST -d'{"name":"Tarek","age":40}' http://127.0.0.1:5000/api/user/1
 """

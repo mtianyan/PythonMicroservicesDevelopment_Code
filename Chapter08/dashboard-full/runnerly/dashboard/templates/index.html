@@ -11,6 +11,12 @@
       <div id="runs"></div>
       <div id="races"></div>
       <div id="training"></div>
+      {% if not user %}
+      <a href="{{strava_url}}">Login via Strava</a>
+      {% else %}
+      Hi {{user}}!
+      <a href="/logout">Logout</a>
+      {% endif %}
     </div>
 
     <script src="/static/react/react.js"></script>

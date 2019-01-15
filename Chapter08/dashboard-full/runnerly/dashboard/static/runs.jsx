@@ -2,6 +2,7 @@ var RunsBox = React.createClass( {
   loadRunsFromServer: function()  {
     var xhr = new XMLHttpRequest();
     xhr.open('get', this.props.url, true);
+    xhr.withCredentials = true;
     xhr.onload = function()  {
       var data = JSON.parse(xhr.responseText);
       this.setState( { data: data } );

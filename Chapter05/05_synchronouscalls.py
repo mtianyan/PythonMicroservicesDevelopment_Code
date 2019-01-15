@@ -4,6 +4,10 @@ s = Session()
 s.headers['Content-Type'] = 'application/json'
 s.auth = 'tarek', 'password'
 
+"""
+同步请求
+"""
+
 # doing some calls, auth and headers are all set!
 s.get('http://localhost:5000/api').json()
 s.get('http://localhost:5000/api2').json()
