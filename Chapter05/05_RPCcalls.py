@@ -6,14 +6,21 @@ def on_message(channel, method_frame, header_frame, body):
 	print('Race #%s: %s' % (race_id, body))
 	channel.basic_ack(delivery_tag=method_frame.delivery_tag)
 
-print("Race NEWS!")
-print("Race #34: b'We have some results")
+"""
+rpc 进行消费 消息
+"""
+# print("Race NEWS!")
+# print("Race #34: b'We have some results")
 connection = pika.BlockingConnection()
 channel = connection.channel()
-#channel.basic_consume(on_message, queue='race')
+# channel.basic_consume(on_message, queue='Race')
 try:
+	print("consuming")
 	channel.start_consuming()
+	print("consuming end")
 except KeyboardInterrupt:
 	channel.stop_consuming()
 
 connection.close()
+
+# python pika_worker.py

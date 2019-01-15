@@ -4,6 +4,9 @@ from flask_extension import app, get_connector
 from flask_webtest import TestApp
 import requests_mock
 
+"""
+requests_mock
+"""
 class TestAPI(unittest.TestCase):
 	def setUp(self):
 		self.app = TestApp(app)

@@ -4,6 +4,9 @@ from logging.handlers import SMTPHandler
 host = "smtp.free.fr", 25
 handler = SMTPHandler(mailhost=host, fromaddr="tarek@ziade.org", toaddrs=["tarek@ziade.org"], subject="Service Exception")
 
+"""
+日志logger
+"""
 logger = logging.getLogger('theapp')
 logger.setLevel(logging.INFO)
 logger.addHandler(handler)

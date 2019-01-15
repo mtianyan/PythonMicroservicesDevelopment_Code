@@ -1,5 +1,8 @@
 from requests import Session
 
+"""
+自定义flask session
+"""
 def setup_connector(app, name='default', **options):
 	if not hasattr(app, 'extensions'):
 		app.extensions = {}
