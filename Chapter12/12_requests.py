@@ -2,6 +2,9 @@ import asyncio
 from concurrent.futures import ThreadPoolExecutor
 import requests
 
+"""
+异步的requests请求
+"""
 # blocking code
 def fetch(url):
 	return requests.get(url).text

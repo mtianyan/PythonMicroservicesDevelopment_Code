@@ -1,6 +1,11 @@
 from sanic import Sanic
 from sanic.response import json
 
+
+
+"""
+看起来语法很像flask的异步框架sanic
+"""
 app = Sanic(__name__)
 
 @app.middleware('response')

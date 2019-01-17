@@ -1,5 +1,8 @@
 from aiohttp import web
 
+"""
+aiohttp & async 异步编程
+"""
 async def api(request):
 	return web.json_response({'some': 'data'})
 
